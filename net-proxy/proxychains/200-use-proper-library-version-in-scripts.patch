@@ -1,0 +1,27 @@
+Description: make 'proxychains' and 'proxyresolv' binaries work without development files for the shared library.
+Forwarded: no
+Author: 
+Last-Update: 2009-03-09
+
+Index: proxychains/proxychains/proxychains
+===================================================================
+--- proxychains.orig/proxychains/proxychains	2009-05-15 23:50:02.481723256 +0300
++++ proxychains/proxychains/proxychains	2009-05-15 23:50:11.370716832 +0300
+@@ -5,5 +5,5 @@
+ 	echo "		proxychains <prog> [args]"
+ 	exit
+ fi
+-export LD_PRELOAD=libproxychains.so
++export LD_PRELOAD=libproxychains.so.3
+ exec "$@"
+Index: proxychains/proxychains/proxyresolv
+===================================================================
+--- proxychains.orig/proxychains/proxyresolv	2009-05-15 23:49:42.149725472 +0300
++++ proxychains/proxychains/proxyresolv	2009-05-15 23:49:56.118716705 +0300
+@@ -12,5 +12,5 @@
+ fi
+ 
+ 
+-export LD_PRELOAD=libproxychains.so
++export LD_PRELOAD=libproxychains.so.3
+ dig $1 @$DNS_SERVER +tcp | awk '/A.+[0-9]+\.[0-9]+\.[0-9]/{print $5;}'

@@ -1,0 +1,16 @@
+Description: Allow user to specify DNS server in proxyresolv
+Author: The Don Lachlan <debian-bts@unpopularminds.org>
+Bug-Debian: http://bugs.debian.org/603239
+Forwarded: No
+Last-Update: 2012-09-14
+--- a/proxychains/proxyresolv
++++ b/proxychains/proxyresolv
+@@ -2,7 +2,7 @@
+ # This script is called by proxychains to resolve DNS names
+ 
+ # DNS server used to resolve names
+-DNS_SERVER=4.2.2.2
++DNS_SERVER=${PROXYRESOLV_DNS:-4.2.2.2}
+ 
+ 
+ if [ $# = 0 ] ; then

@@ -1,0 +1,17 @@
+Description: Fix FTBFS avoiding the conflicting declarations.
+Forwarded: no
+Author: Lorenzo De Liso <blackz@ubuntu.com>
+Last-Update: 2012-12-02
+Index: proxychains-3.1/proxychains/libproxychains.c
+===================================================================
+--- proxychains-3.1.orig/proxychains/libproxychains.c	2012-12-02 05:40:02.877872516 -0700
++++ proxychains-3.1/proxychains/libproxychains.c	2012-12-02 05:46:32.321858741 -0700
+@@ -337,7 +337,7 @@
+ int getnameinfo (const struct sockaddr * sa,
+ 			socklen_t salen, char * host,
+ 			socklen_t hostlen, char * serv,
+-			socklen_t servlen, unsigned int flags)
++			socklen_t servlen, int flags)
+ {
+ 	int ret = 0;
+ 	if(!init_l)

@@ -1,0 +1,16 @@
+Description: Fix spelling mistake
+Author: Daniel Echeverry <epsilon77@gmail.com>
+Bug-Debian: http://bugs.debian.org/683805
+Forwarded: yes
+Last-Update: 2012-09-14
+--- a/proxychains/core.c
++++ b/proxychains/core.c
+@@ -669,7 +669,7 @@
+ 			name, inet_ntoa(*(struct in_addr*)&addr));
+ 	return &hostent_space;
+ err_dns:
+-	proxychains_write_log("|DNS-response|: %s is not exist\n", name);
++	proxychains_write_log("|DNS-response|: %s does not exist\n", name);
+ err:
+ 	return NULL;
+ }

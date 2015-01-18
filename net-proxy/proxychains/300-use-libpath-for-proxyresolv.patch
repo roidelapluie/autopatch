@@ -1,0 +1,16 @@
+Description: Use changed path for proxyresolv helper script.
+Forwarded: no
+Author: 
+Last-Update: 2009-05-16
+
+--- a/proxychains/core.c
++++ b/proxychains/core.c
+@@ -641,7 +641,7 @@
+ 			dup2(pipe_fd[1],1);
+ 			//dup2(pipe_fd[1],2);
+ 		//	putenv("LD_PRELOAD=");
+-			execlp("proxyresolv","proxyresolv",name,NULL);
++			execl("/usr/lib/proxychains3/proxyresolv","proxyresolv",name,NULL);
+ 			perror("can't exec proxyresolv");
+ 			exit(2);
+ 
