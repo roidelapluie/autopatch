@@ -1,0 +1,13 @@
+diff --git a/sc/inc/address.hxx b/sc/inc/address.hxx
+index f6650d4..f1699af 100644
+--- a/sc/inc/address.hxx
++++ b/sc/inc/address.hxx
+@@ -58,7 +58,7 @@ const SCSIZE   SCSIZE_MAX   = ::std::numeric_limits<SCSIZE>::max();
+ // The maximum values. Defines are needed for preprocessor checks, for example
+ // in bcaslot.cxx, otherwise type safe constants are preferred.
+ #define MAXROWCOUNT_DEFINE 1048576
+-#define MAXCOLCOUNT_DEFINE 1024
++#define MAXCOLCOUNT_DEFINE 4096
+ 
+ // Count values
+ const SCROW       MAXROWCOUNT    = MAXROWCOUNT_DEFINE;
