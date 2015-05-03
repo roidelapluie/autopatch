@@ -1,0 +1,11 @@
+--- a/PYTHON_ABIS/2.7/PyQt-gpl-5.4.1/configure.py	2015-05-08 11:01:15.224696717 +0200
++++ b/PYTHON_ABIS/2.7/PyQt-gpl-5.4.1/configure.py	2015-05-08 11:04:30.837946211 +0200
+@@ -2042,7 +2042,7 @@
+         inform("The Python dbus module doesn't seem to be installed.")
+         return
+ 
+-    target_config.pydbus_module_dir = dbus.mainloop.__path__[0]
++    target_config.pydbus_module_dir = '/usr/x86_64-pc-linux-gnu/lib/python2.7/site-packages/dbus/mainloop'
+ 
+     # Try and find dbus-python.h.  We don't use pkg-config because it is broken
+     # for dbus-python (at least for versions up to and including v0.81.0).
