@@ -1,0 +1,34 @@
+Index: GNUmakefile
+===================================================================
+--- a/GNUmakefile	(revision 94)
++++ b/GNUmakefile	(working copy)
+@@ -24,12 +24,12 @@
+ install : alock
+ endif
+ 	install -d \
+-		$(DESTDIR)$(prefix)/bin \
++		$(DESTDIR)/usr/x86_64-pc-linux-gnu/bin \
+ 		$(DESTDIR)$(prefix)/share/alock/xcursors \
+ 		$(DESTDIR)$(prefix)/share/alock/bitmaps
+ 	install -m755 \
+ 		src/alock \
+-		$(DESTDIR)$(prefix)/bin/alock
++		$(DESTDIR)/usr/x86_64-pc-linux-gnu/bin/alock
+ 	if [ -f alock.1 ]; then \
+ 		install -d \
+ 			$(DESTDIR)$(prefix)/share/man/man1 ; \
+Index: src/GNUmakefile
+===================================================================
+--- a/src/GNUmakefile	(revision 94)
++++ b/src/GNUmakefile	(working copy)
+@@ -21,8 +21,8 @@
+ endef
+ 
+ ##########################
+-MAKEDEP ?= gcc -MM
+-CC ?= gcc
++MAKEDEP ?= x86_64-pc-linux-gnu-gcc -MM
++CC ?= x86_64-pc-linux-gnu-gcc
+ CFLAGS += -Wall -Wmissing-prototypes -Wmissing-declarations -DVERSION=$(VERSION)
+ LDFLAGS ?=
+ LIBS ?= -lX11
