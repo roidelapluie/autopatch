@@ -1,0 +1,11 @@
+--- a/CMakeLists2.txt	2015-09-19 14:41:53.323230946 +0200
++++ b/CMakeLists.txt	2015-09-19 14:42:12.861214368 +0200
+@@ -40,7 +40,7 @@
+ OPTION(WANT_STK		"Include Stk (Synthesis Toolkit) support" ON)
+ OPTION(WANT_SWH		"Include Steve Harris's LADSPA plugins" ON)
+ OPTION(WANT_TAP		"Include Tom's Audio Processing LADSPA plugins" ON)
+-OPTION(WANT_VST		"Include VST support" ON)
++OPTION(WANT_VST		"Include VST support" OFF)
+ OPTION(WANT_VST_NOWINE	"Include partial VST support (without wine)" OFF)
+ OPTION(WANT_WINMM	"Include WinMM MIDI support" OFF)
+ 

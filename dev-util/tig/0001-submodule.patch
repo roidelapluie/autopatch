@@ -1,0 +1,31 @@
+From 6a95698c452c59a8cdf5cb658aac8a51e5d369fd Mon Sep 17 00:00:00 2001
+From: Julien Pivotto <roidelapluie@inuits.eu>
+Date: Thu, 18 Jun 2015 16:43:26 +0200
+Subject: [PATCH] submodule
+
+---
+ include/tig/git.h | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/include/tig/git.h b/include/tig/git.h
+index 329490d..8b78883 100644
+--- a/include/tig/git.h
++++ b/include/tig/git.h
+@@ -31,12 +31,12 @@
+ 		"--", (old_name), (new_name), NULL
+ 
+ #define GIT_DIFF_UNSTAGED(encoding_arg, context_arg, space_arg, old_name, new_name) \
+-	"git", "diff-files", (encoding_arg), "--root", "--patch-with-stat", "-C", "-M", \
++	"git", "diff-files", (encoding_arg), "--root", "--patch-with-stat", "-C", "--submodule", "-M", \
+ 		(context_arg), (space_arg), "--", (old_name), (new_name), NULL
+ 
+ /* Don't show staged unmerged entries. */
+ #define GIT_DIFF_STAGED_FILES(output_arg) \
+-	"git", "diff-index", (output_arg), "--diff-filter=ACDMRTXB", "-C", "--cached", "HEAD", "--", NULL
++	"git", "diff-index", (output_arg), "--diff-filter=ACDMRTXB", "-C", "--submodule", "--cached", "HEAD", "--", NULL
+ 
+ #define GIT_DIFF_UNSTAGED_FILES(output_arg) \
+ 	"git", "diff-files", (output_arg), NULL
+-- 
+2.4.1
+
